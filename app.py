@@ -14,5 +14,5 @@ def getPoke(poke):
         "types": [t["type"]["name"] for t in data["types"]]
     }
 
-pokemon = getPoke("Pikachu")
+pokemon = getPoke("Mew")
 print(pokemon)
