@@ -20,18 +20,13 @@ print(pokemon)"""
 import requests
 
 def getPotter(potter):
-    response = requests.get(f"https://vlaurencena.github.io/harry-potter-openapi-swagger-ui/#/")
+    response = requests.get(f"https://potterapi-fedeperin.vercel.app/en")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
     
     data = response.json()
-    return {
-        "characters": data["characters"],
-        "house": data["house"],
-        "spells": data["spells"],
-        "types": [t["type"]["characters"] for t in data["types"]]
-    }
+    return data
 
 potter = getPotter("Harry Potter")
 print(potter)
