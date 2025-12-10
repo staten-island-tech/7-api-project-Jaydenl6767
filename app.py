@@ -20,7 +20,7 @@ print(pokemon)"""
 import requests
 
 def getPotter(potter):
-    response = requests.get(f"https://potterapi-fedeperin.vercel.app/en")
+    response = requests.get(f"https://hp-api.onrender.com/api/characters/house/{potter.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
@@ -28,5 +28,5 @@ def getPotter(potter):
     data = response.json()
     return data
 
-potter = getPotter("Harry Potter")
+potter = getPotter("slytherin")
 print(potter)
