@@ -22,12 +22,13 @@ import requests
 def getPotter(potter):
     response = requests.get(f"https://hp-api.onrender.com/api/characters/house/{potter.lower()}")
     if response.status_code != 200:
-        print("Error fetching data!")
+        print("What type of Harry Potter house is that!?")
         return None
     
     data = response.json()
     return data
-
-potter = getPotter("slytherin")
+potter = getPotter("Hufflepuff")
 print(potter)
+    
+
 
