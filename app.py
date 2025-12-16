@@ -26,9 +26,14 @@ def getPotter(potter):
         return None
     
     data = response.json()
-    return data
-potter = getPotter("Hufflepuff")
+    for i in data:
+        print(i["name"])
+
+potter = getPotter("Gryffindor")
 print(potter)
-    
+
+
+
+
 
 
