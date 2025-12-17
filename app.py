@@ -28,9 +28,15 @@ def getPotter(potter):
     data = response.json()
     for i in data:
         print(i["name"])
+        print(i["gender"])
+        print(i["hogwartsStudent"])
+        print (i["hogwartsStaff"])
 
 potter = getPotter("Gryffindor")
 print(potter)
+
+input = ("Is this character a student or a staff member?")
+
 
 
 
