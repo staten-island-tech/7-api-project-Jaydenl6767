@@ -29,17 +29,38 @@ def getPotter(potter):
     for i in data:
         print(i["name"])
         print(i["gender"])
-        print(i["hogwartsStudent"])
-        print (i["hogwartsStaff"])
+        print(i["species"])
+        print(i["actor"])
 
 potter = getPotter("Gryffindor")
 print(potter)
 
-input = ("Is this character a student or a staff member?")
+input = ("What is your favorite Harry Potter character of this house?")
+
+import tkinter as tk 
+window = tk.Tk()
+window.title("Message Reverser") 
+window.geometry("400x250")
+window.resizable(False, False)
+prompt = tk.Label(window, text="Type your message below:",
+font=("Arial", 14))
+prompt.pack(pady=10)
+entry = tk.Entry(window, font=("Arial", 14), width=30)
+entry.pack(pady=5)
+result_label = tk.Label(window, text="", font=("Arial", 14, "bold"),
+fg="blue")
+result_label.pack(pady=15)
 
 
 
 
+def reverse_message():
+    text = entry.get() 
+    reversed_text = text[::-1]
+    result_label.config(text=f"Backwards: {reversed_text}")
+reverse_button = tk.Button(window, text="Reverse Message!",
+font=("Arial", 14),
 
-
-
+command=reverse_message)
+reverse_button.pack(pady=10)
+window.mainloop()
